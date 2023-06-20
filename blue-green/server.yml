@@ -2,6 +2,11 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout 
 metadata:
   name: bg-server
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: org/app=docker.io/myyrakle/node-server-for-test
+    argocd-image-updater.argoproj.io/org_app.update-strategy: latest
+    argocd-image-updater.argoproj.io/write-back-method: argocd
+    argocd-image-updater.argoproj.io/org_app.allow-tags: ^[0-9a-f]{7}$
 spec:
   replicas: 3
   revisionHistoryLimit: 2
