@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: bg-server
-        image: myyrakle/node-server-for-test:2
+        image: myyrakle/node-server-for-test:1
         imagePullPolicy: Always
         ports:
         - containerPort: 80
@@ -23,4 +23,4 @@ spec:
     blueGreen: 
       activeService: prod-service
       previewService: test-service
-      autoPromotionEnabled: false
+      autoPromotionEnabled: true
