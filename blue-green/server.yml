@@ -27,7 +27,7 @@ spec:
       autoPromotionSeconds: 10
       prePromotionAnalysis:
         templates:
-        - templateName: test-service
+        - templateName: bg-server
         args:
         - name: test-service
           value: test-service.default.svc.cluster.local
