@@ -27,7 +27,7 @@ spec:
       autoPromotionSeconds: 10
       prePromotionAnalysis:
         templates:
-        - templateName: smoke-tests
+        - templateName: success-rate
         args:
         - name: service-name
           value: test-service.default.svc.cluster.local
