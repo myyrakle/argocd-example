@@ -4,7 +4,7 @@ metadata:
   name: prod-service
 spec:
   selector:
-    app: blue-server
+    app: bg-server
   ports:
     - protocol: TCP
       port: 80
