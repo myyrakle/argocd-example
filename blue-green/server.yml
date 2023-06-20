@@ -29,5 +29,5 @@ spec:
         templates:
         - templateName: bg-server
         args:
-        - name: test-service
+        - name: service-name
           value: test-service.default.svc.cluster.local
