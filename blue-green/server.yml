@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout 
+metadata:
+  name: bg-server
+spec:
+  replicas: 3
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: bg-server
+  template:
+    metadata:
+      labels:
+        app: bg-server
+    spec:
+      containers:
+      - name: bg-server
+        image: myyrakle/node-server-for-test:1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+  strategy:
+    blueGreen: 
+      activeService: prod-service
+      previewService: test-service
+      autoPromotionEnabled: false
