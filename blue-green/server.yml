@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: bg-server
-        image: myyrakle/node-server-for-test:1
+        image: myyrakle/node-server-for-test:2
         imagePullPolicy: Always
         ports:
         - containerPort: 80
@@ -25,3 +25,9 @@ spec:
       previewService: test-service
       autoPromotionEnabled: true
       autoPromotionSeconds: 10
+      prePromotionAnalysis:
+        templates:
+        - templateName: test-service
+        args:
+        - name: test-service
+          value: test-service.default.svc.cluster.local
